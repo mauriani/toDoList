@@ -1,0 +1,13 @@
+.container {
+  background: var(--gray-700);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 4.5rem 0;
+}
+
+.container img {
+  height: 3rem;
+}
