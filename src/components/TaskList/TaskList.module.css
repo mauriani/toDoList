@@ -57,6 +57,7 @@
   justify-content: space-between;
 
   height: 4.5rem;
+  width: 46rem;
 
   background-color: var(--gray-500);
   border: 1px solid var(--gray-400);
@@ -77,4 +78,32 @@
 
 .tasksListContent aside div input {
   margin-right: 0.75rem;
+  height: 1.5rem;
+}
+
+.tasksListContainer aside div button {
+  background-color: transparent;
+  border: 0;
+  color: var(--gray-100);
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  border-radius: 2px;
+}
+
+.tasksListContainer aside div button:hover {
+  color: var(--red-500);
+}
+
+.tasksListContent aside svg {
+  color: var(--gray-300);
+}
+
+.tasksListContent aside p {
+  color: var(--gray-300);
+  font-size: 1rem;
+  line-height: 140%;
+
+  font-weight: 700;
 }

@@ -1,45 +1,85 @@
 import styles from "./TaskList.module.css";
 
-import { Trash } from "phosphor-react";
+import { Trash, ClipboardText } from "phosphor-react";
 
-export function TaskList() {
+interface PropsList {
+  id: string;
+  task: string;
+  conclude: boolean;
+}
+interface Props {
+  textCreate: string;
+  textCreateCount: string;
+  textConclude: string;
+  textConcludeCount: string;
+  data: PropsList[] | null;
+  deleteTask?: (id: string) => void;
+  concludeTask?: (id: string) => void;
+}
+
+export function TaskList({
+  textCreate,
+  textCreateCount,
+  textConclude,
+  textConcludeCount,
+  data,
+  deleteTask,
+  concludeTask,
+}: Props) {
+  function handleDeleteTask(id: string) {
+    if (deleteTask) deleteTask(id);
+  }
+
+  function handleConcludeTask(id: string) {
+    if (concludeTask) concludeTask(id);
+  }
+
   return (
     <main className={styles.tasksListContainer}>
       <div className={styles.tasksListContent}>
         <header>
           <div>
             <p>
-              Tarefas criadas
-              <span>5</span>
+              {textCreate}
+              <span>{textCreateCount}</span>
             </p>
 
             <p>
-              Concluídas <span>2 de 5</span>
+              {textConclude} <span>{textConcludeCount}</span>
             </p>
           </div>
         </header>
 
-        <aside>
-          <div>
-            <input type="radio" />
-            <p>
-              Integer urna interdum massa libero auctor neque turpis turpis
-              semper. Duis vel sed fames integer.
-            </p>
+        {data!.length > 0 ? (
+          <aside>
+            {data?.map((item) => {
+              return (
+                <div key={item.id}>
+                  <input
+                    type="radio"
+                    onClick={() => handleConcludeTask(item.id)}
+                  />
+                  <p>{item.task}</p>
 
-            <Trash size={24} />
-          </div>
-
-          <div>
-            <input type="radio" />
-            <p>
-              Integer urna interdum massa libero auctor neque turpis turpis
-              semper. Duis vel sed fames integer.
-            </p>
-
-            <Trash size={24} />
-          </div>
-        </aside>
+                  <button onClick={() => handleDeleteTask(item.id)}>
+                    <Trash size={24} />
+                  </button>
+                </div>
+              );
+            })}
+          </aside>
+        ) : (
+          <>
+            <aside>
+              <ClipboardText size={56} />
+              <p>
+                <strong>Você ainda não tem tarefas cadastradas</strong>
+                <br />
+                Crie tarefas e organize seus itens a fazer
+              </p>
+            </aside>
+          </>
+        )}
       </div>
     </main>
   );
