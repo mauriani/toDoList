@@ -17,7 +17,7 @@
   justify-content: space-between;
 }
 
-.tasksListContent header > p {
+.tasksListContent header div p {
   color: var(--blue-300);
   font-size: 0.875rem;
   font-weight: 700;
@@ -76,9 +76,13 @@
   padding: 0 12px;
 }
 
-.tasksListContent aside div input {
+.tasksListContent aside div input[type="checkbox"] {
   margin-right: 0.75rem;
-  height: 1.5rem;
+}
+
+.tasksListContent input[type="checkbox"]:checked ~ p {
+  text-decoration: line-through;
+  color: var(--gray-300);
 }
 
 .tasksListContainer aside div button {
@@ -89,10 +93,11 @@
 
   display: flex;
   align-items: center;
+
   border-radius: 2px;
 }
 
-.tasksListContainer aside div button:hover {
+.tasksListContainer aside div button:hover svg {
   color: var(--red-500);
 }
 

@@ -77,7 +77,7 @@
   justify-content: space-between;
 }
 
-.tasksListContent header p {
+.tasksListContent header div p {
   color: var(--blue-300);
   font-size: 0.875rem;
   font-weight: 700;

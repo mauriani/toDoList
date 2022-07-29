@@ -18,6 +18,7 @@ export function App() {
   const [tasksList, setTasksList] = useState<PropsList[]>([]);
   const [newTask, setNewTask] = useState("");
   const [taskCreateCount, setTaskCreateCount] = useState("");
+  const [taskConcludeCount, setTaskConcludeCount] = useState("");
 
   function addNewTasks(event: FormEvent) {
     event.preventDefault();
@@ -45,14 +46,39 @@ export function App() {
     setTasksList(taskWithoutDeletedOne);
   }
 
-   function handleCompleteTask(){
+  function handleCompleteTask(taskCompleted: string) {
+    let completedItemList = tasksList.map((item) => {
+      if (taskCompleted == item.id) {
+        if (item.conclude == false) {
+          return { ...item, conclude: true };
+        } else {
+          return { ...item, conclude: false };
+        }
+      }
+      return item;
+    });
 
-   }
+    setTasksList(completedItemList);
+  }
 
   useEffect(() => {
     const value = tasksList.length.toString();
     setTaskCreateCount(value);
+
+    let taskConcludeCount = tasksList.reduce((sum, task) => {
+      if (task.conclude == true) {
+        return (sum = sum + 1);
+      }
+
+      return sum;
+    }, 0);
+
+    let text = `${taskConcludeCount} de ${value}`;
+
+    setTaskConcludeCount(text);
   }, [tasksList]);
+
+  console.log(taskConcludeCount);
 
   return (
     <div>
@@ -80,7 +106,7 @@ export function App() {
           textCreate={"Tarefas criadas"}
           textCreateCount={taskCreateCount}
           textConclude={"Concluídas"}
-          textConcludeCount={"0"}
+          textConcludeCount={taskConcludeCount}
           data={[]}
         />
       ) : (
@@ -88,7 +114,7 @@ export function App() {
           textCreate={"Tarefas criadas"}
           textCreateCount={taskCreateCount}
           textConclude={"Concluídas"}
-          textConcludeCount={"0"}
+          textConcludeCount={taskConcludeCount}
           data={tasksList}
           deleteTask={handleDeleteTask}
           concludeTask={handleCompleteTask}

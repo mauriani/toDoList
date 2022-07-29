@@ -56,7 +56,8 @@ export function TaskList({
               return (
                 <div key={item.id}>
                   <input
-                    type="radio"
+                    type="checkbox"
+                    defaultChecked={item.conclude}
                     onClick={() => handleConcludeTask(item.id)}
                   />
                   <p>{item.task}</p>
