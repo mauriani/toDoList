@@ -25,8 +25,9 @@
 }
 
 .tasksListContent header span {
-  width: 1.563rem;
+  width: 1.6rem;
   height: 1.188rem;
+
   margin-left: 0.5rem;
   padding: 2px 8px;
   border-radius: 999px;
@@ -48,6 +49,23 @@
 
   margin-top: 1.5rem;
   border-top: 1px solid var(--gray-400);
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  scroll-padding-top: 2em;
+}
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gray-300);
 }
 
 .tasksListContent aside div {
@@ -64,7 +82,7 @@
   border-radius: 8px;
 
   padding: 16px;
-  margin-bottom: 12px;
+  margin-bottom: 0.75rem;
 }
 
 .tasksListContent aside div p {
