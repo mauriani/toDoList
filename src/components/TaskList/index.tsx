@@ -72,7 +72,7 @@ export function TaskList({
         ) : (
           <>
             <aside>
-              <ClipboardText size={56} />
+              <ClipboardText size={56} style={{ marginTop: 64 }} />
               <p>
                 <strong>Você ainda não tem tarefas cadastradas</strong>
                 <br />
