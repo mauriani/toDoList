@@ -10,6 +10,7 @@
 ## 🚀 Sobre o projeto
 
 ToDoList desenvolvido durante o primeiro modulo do trilha de ReactJs da Rocketseat.
+Deployer do projeto : https://heroic-quokka-3c55ef.netlify.app/
 
 ## 🖥️ Tecnologias usadadas
 
