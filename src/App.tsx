@@ -101,7 +101,7 @@ export function App() {
         </div>
       </form>
 
-      {tasksList.length == 0 ? (
+      {/* {tasksList.length == 0 ? (
         <TaskList
           textCreate={"Tarefas criadas"}
           textCreateCount={taskCreateCount}
@@ -119,7 +119,7 @@ export function App() {
           deleteTask={handleDeleteTask}
           concludeTask={handleCompleteTask}
         />
-      )}
+      )} */}
     </div>
   );
 }

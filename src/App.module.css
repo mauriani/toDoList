@@ -3,19 +3,14 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  flex-shrink: 1;
 
-  margin-top: -2rem;
-
-  padding: 0 22rem;
+  margin-top: -2.5rem;
 }
 
 .content div {
-  width: 46rem;
-  height: 3.375rem;
-
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
 
 .content input {
@@ -33,7 +28,7 @@
 }
 
 .content button[type="submit"] {
-  height: 100%;
+  height: 3.375rem;
   width: 6.1rem;
   background-color: var(--blue-700);
   border-radius: 8px;
@@ -120,4 +115,25 @@
   line-height: 140%;
 
   font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+  }
+
+  .content div {
+    flex-direction: column;
+    padding: 0 0.625rem;
+    width: 100%;
+  }
+
+  .content input {
+    width: 100%;
+    margin-right: 0.125rem;
+  }
+
+  .content button {
+    margin-top: 1rem;
+  }
 }
