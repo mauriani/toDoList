@@ -55,6 +55,19 @@
   scroll-padding-top: 2em;
 }
 
+.tasksListContent footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+
+  margin-top: 1.5rem;
+  border-top: 1px solid var(--gray-400);
+}
+
 ::-webkit-scrollbar {
   width: 0.5rem;
 }
