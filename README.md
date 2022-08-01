@@ -2,8 +2,8 @@
 
 
 <div align="center">
-  <img src=https://user-images.githubusercontent.com/32397288/182157883-dcd4707e-9690-4dc8-995d-de6601b55d42.PNG" width="170"> | 
-  <img src="https://user-images.githubusercontent.com/32397288/182157886-6549dcff-ae68-44a3-9b26-4f1298bd2d32.PNG" width="170"> | 
+  <img src="https://user-images.githubusercontent.com/32397288/182157883-dcd4707e-9690-4dc8-995d-de6601b55d42.PNG">
+  <img src="https://user-images.githubusercontent.com/32397288/182157886-6549dcff-ae68-44a3-9b26-4f1298bd2d32.PNG">
 </div>
 
 
