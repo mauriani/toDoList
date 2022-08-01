@@ -71,14 +71,14 @@ export function TaskList({
           </aside>
         ) : (
           <>
-            <footer>
+            <aside>
               <ClipboardText size={56} />
               <p>
                 <strong>Você ainda não tem tarefas cadastradas</strong>
                 <br />
                 Crie tarefas e organize seus itens a fazer
               </p>
-            </footer>
+            </aside>
           </>
         )}
       </div>
