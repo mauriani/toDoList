@@ -73,12 +73,14 @@ export function App() {
       return sum;
     }, 0);
 
-    let text = `${taskConcludeCount} de ${value}`;
+    let text = "0";
+
+    if (tasksList.length > 0) {
+      text = `${taskConcludeCount} de ${value}`;
+    }
 
     setTaskConcludeCount(text);
   }, [tasksList]);
-
-  console.log(taskConcludeCount);
 
   return (
     <div>
